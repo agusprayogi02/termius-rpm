@@ -1,6 +1,9 @@
 %global pkgname termius-app
 %global pkgver 10.1.0
 
+# Filter glibc 2.17 symbol versions not provided on Fedora
+%global __requires_exclude ^(libdl\\.so\\.2|libm\\.so\\.6|libpthread\\.so\\.0)\\(GLIBC_2\\.17\\)
+
 Summary: Desktop SSH Client
 Name: %{pkgname}
 Version: %{pkgver}
